@@ -1,44 +1,259 @@
+/* ===== Palette (from your Pinterest swatches) ===== */
+:root {
+  --p1: #FFF2F7;   /* lightest blush */
+  --p2: #FFC6DB;
+  --p3: #FFE5EE;
+  --p4: #FFD0E1;
+  --p5: #FFB5D4;
+  --p6: #FF87B9;   /* main pink */
+  --p7: #FFD7EC;
+  --ink: #B83A78;  /* deeper pink derived from --p6, used only so body text stays readable */
+
+  /* Theme variables (swapped by .dark-mode) */
+  --bg: var(--p3);
+  --text: var(--ink);
+  --heading: var(--p6);
+  --slide: var(--p1);
+  --paper: #ffffff;
+}
+
 /* Base Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  /* Base Styles */
-  body {
-    background-color: #FFE5EE;
-    color: #FF87B9;
-    line-height: 1.6;
-    padding: 2rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Dynamic State Class (Toggled via JavaScript) */
-  body.dark-mode {
-    background-color: #FF87B9;
-    color: #FFE5EE;
-  }
-  
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  button {
-    padding: 0.6rem 1.2rem;
-    background-color: #FF87B9;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #004b99;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--p2) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  color: var(--text);
+  line-height: 1.6;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dynamic State Class (Toggled via JavaScript) */
+body.dark-mode {
+  --bg: var(--p6);
+  --text: var(--p3);
+  --heading: var(--p3);
+  --slide: var(--p5);
+  background-color: var(--p6);
+  background-image: radial-gradient(var(--p5) 1.2px, transparent 1.2px);
+  color: var(--p3);
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed var(--p5);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header nav h2 { color: var(--heading); }
+
+button {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--p6);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+a { color: var(--ink); font-weight: 600; }
+body.dark-mode a { color: #fff; }
+
+/* ===== Slides ===== */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.slide {
+  position: relative;
+  background: var(--slide);
+  border-radius: 14px;
+  padding: 3rem 2rem 2.5rem;
+  box-shadow: 0 8px 20px rgba(255, 135, 185, 0.3);
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease;
+}
+.slide.visible { opacity: 1; transform: none; }
+
+/* Torn paper bottom edge: white layer + pink layer */
+.slide.torn { padding-bottom: 6rem; }
+.slide.torn::before,
+.slide.torn::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  clip-path: polygon(0 55%, 6% 35%, 12% 50%, 19% 20%, 26% 45%, 33% 30%, 40% 55%, 47% 25%, 54% 48%, 61% 22%, 68% 50%, 75% 28%, 82% 52%, 89% 30%, 95% 48%, 100% 35%, 100% 100%, 0 100%);
+}
+.slide.torn::before { height: 80px; background: #fff; }
+.slide.torn::after  { height: 62px; background: var(--p5); }
+
+h1, h2, h3 { color: var(--heading); }
+.slide p { margin-top: 0.6rem; }
+
+.script {
+  font-family: 'Caveat', 'Brush Script MT', cursive;
+  color: var(--heading);
+}
+.script.big { font-size: 2.6rem; line-height: 1.1; }
+.script.big small { font-size: 1.6rem; }
+
+/* ===== Ransom-note lettering (letters made in script.js) ===== */
+.ransom { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-bottom: 0.5rem; }
+.ransom span {
+  display: inline-block;
+  padding: 0.05em 0.28em;
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.15;
+  border-radius: 3px;
+  box-shadow: 1px 2px 3px rgba(184, 58, 120, 0.25);
+}
+.ransom.small span { font-size: 2.2rem; }
+.ransom span.space { background: none !important; box-shadow: none; width: 0.5em; padding: 0; }
+.ransom .c0 { background: var(--p6); color: #fff;      transform: rotate(-4deg); }
+.ransom .c1 { background: var(--p7); color: var(--ink); transform: rotate(3deg);  font-family: Georgia, serif; }
+.ransom .c2 { background: #fff;      color: var(--p6);  transform: rotate(-2deg); font-family: 'Courier New', monospace; }
+.ransom .c3 { background: var(--p2); color: var(--ink); transform: rotate(5deg);  font-family: Impact, sans-serif; }
+.ransom .c4 { background: var(--ink); color: var(--p3); transform: rotate(-5deg); font-family: Georgia, serif; }
+.ransom .c5 { background: var(--p5); color: #fff;      transform: rotate(2deg); }
+
+.hero-name { font-size: 1.4rem; font-weight: 700; color: var(--heading); }
+
+/* Stickers */
+.sticker { position: absolute; color: var(--p6); font-size: 1.8rem; }
+.s1 { top: 18%; left: 8%; }
+.s2 { top: 14%; right: 10%; color: var(--ink); }
+.s3 { top: 52%; right: 14%; font-size: 2.4rem; color: #fff; }
+
+/* ===== About ===== */
+.about-layout { display: flex; gap: 2rem; align-items: center; justify-content: center; flex-wrap: wrap; text-align: left; }
+.paper {
+  flex: 1 1 320px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 1.6rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(255, 135, 185, 0.35);
+  transform: rotate(1deg);
+  border-top: 14px solid var(--p2);
+}
+.paper h2 { margin-bottom: 0.4rem; }
+
+/* Polaroids */
+.polaroid {
+  background: #fff;
+  padding: 0.7rem 0.7rem 0.4rem;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(255, 135, 185, 0.4);
+  color: var(--ink);
+}
+.polaroid img, .photo-ph { width: 100%; height: 200px; object-fit: cover; display: block; }
+.photo-ph {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--p7); color: var(--ink); font-weight: 600; text-align: center; padding: 0.5rem;
+}
+.polaroid .caption { margin: 0.3rem 0; font-size: 1.5rem; text-align: center; }
+.tilt-left  { transform: rotate(-4deg); }
+.tilt-right { transform: rotate(4deg); }
+
+/* ===== Fun facts ===== */
+.facts-layout { display: flex; gap: 2rem; align-items: center; justify-content: center; flex-wrap: wrap; text-align: left; }
+ul.dotted { list-style: disc; padding-left: 1.4rem; font-size: 1.1rem; color: var(--text); }
+ul.dotted li::marker { color: var(--p6); }
+
+/* ===== Hobbies ===== */
+.circles { display: flex; gap: 2.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+.circles figure { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+.circle {
+  width: 130px; height: 130px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.2rem; color: #fff;
+  background: radial-gradient(circle at 30% 30%, var(--p5), var(--p6));
+  border: 6px solid #fff;
+  box-shadow: 0 0 0 4px var(--p2), 0 6px 12px rgba(255, 135, 185, 0.4);
+  transition: transform 0.25s ease;
+}
+.circle:hover { transform: scale(1.08) rotate(-4deg); }
+figcaption { font-weight: 700; color: var(--text); }
+
+/* ===== Projects ===== */
+.card-row { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+.card {
+  flex: 1 1 280px;
+  max-width: 420px;
+  background: var(--paper);
+  color: var(--ink);
+  border-left: 8px solid var(--p6);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(255, 135, 185, 0.35);
+  transition: transform 0.25s ease;
+}
+.card:hover { transform: translateY(-4px) rotate(-0.5deg); }
+.card h3 { color: var(--p6); }
+
+/* ===== Achievements ===== */
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-top: 1.2rem; }
+.chips li {
+  background: var(--paper);
+  color: var(--ink);
+  border: 2px dashed var(--p6);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-weight: 600;
+}
+.chips li::before { content: "\2605  "; color: var(--p6); }
+
+/* ===== Gallery ===== */
+.clothesline {
+  position: relative;
+  display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+  margin-top: 1.5rem; padding-top: 1.2rem;
+}
+.clothesline::before {
+  content: ""; position: absolute; top: 0; left: 4%; right: 4%;
+  border-top: 3px solid var(--p6); border-radius: 50%;
+}
+.clothesline .polaroid { width: 190px; }
+.clothesline .photo-ph { height: 160px; }
+
+/* ===== Contact ===== */
+#contact button { margin-top: 1rem; }
+
+footer { text-align: center; margin-top: 2rem; color: var(--text); }
+
+/* ===== Small screens ===== */
+@media (max-width: 600px) {
+  body { padding: 1rem; }
+  .ransom span { font-size: 2.4rem; }
+  .ransom.small span { font-size: 1.6rem; }
+  .slide { padding: 2rem 1rem; }
+  .slide.torn { padding-bottom: 5rem; }
+}
