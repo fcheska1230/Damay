@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student E-Portfolio</title>
 
+  <!-- Handwritten accent font (falls back to cursive if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
   <!-- Connection 1: External CSS Link -->
   <link rel="stylesheet" href="style.css">
 
@@ -22,29 +26,122 @@
   </header>
 
   <main>
-    <section id="hero">
-      <h1>Welcome to My E-Portfolio</h1>
+
+    <!-- SLIDE 1: Title -->
+    <section id="hero" class="slide torn">
+      <span class="sticker s1">&#9733;</span>
+      <span class="sticker s2">&#10084;</span>
+      <span class="sticker s3">&#9733;</span>
+      <!-- Letters are cut out like a ransom note by script.js -->
+      <h1 class="ransom" data-text="About me!" aria-label="About me!">About me!</h1>
+      <p class="script">Welcome to My E-Portfolio</p>
+      <p class="hero-name">Francheska Louielyn T. Damay</p>
       <p>1st Year Information Technology Student</p>
     </section>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="card">
-        <h3>Web Integration Lab</h3>
-        <p>A demonstration of linking HTML, CSS, and JS.</p>
+    <!-- SLIDE 2: About me card -->
+    <section id="about" class="slide">
+      <div class="about-layout">
+        <div class="polaroid tilt-left">
+          <div class="photo-ph">Add your photo<br><small>(replace with &lt;img src="photo.jpg"&gt;)</small></div>
+          <p class="script caption">Francheska &hearts;</p>
+        </div>
+        <div class="paper">
+          <h2 class="script big">About me</h2>
+          <p>Hi! I'm <strong>Francheska Louielyn T. Damay</strong>, 18 years old, a first-year Information Technology student at the University of Immaculate Conception in Davao City.</p>
+          <p>I finished junior and senior high school at Calinan National High School (2020&ndash;2026) and elementary at Calinan Elementary School (2013&ndash;2020).</p>
+          <p>I love drawing, listening to music, and performing on stage &mdash; and now I'm learning to build things with code.</p>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
+    <!-- SLIDE 3: Fun facts -->
+    <section id="facts" class="slide torn">
+      <div class="facts-layout">
+        <h2 class="script big">Fun Facts<br><small>About me</small></h2>
+        <ul class="dotted">
+          <li>I'm 18 years old.</li>
+          <li>My favorite color is pink.</li>
+          <li>I like drawing in my free time.</li>
+          <li>I always have music playing.</li>
+          <li>I'm a multi-time dance and speech choir champion.</li>
+          <li>I'm studying Information Technology.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Hobbies -->
+    <section id="hobbies" class="slide">
+      <h2 class="ransom small" data-text="My hobbies" aria-label="My hobbies">My hobbies</h2>
+      <div class="circles">
+        <figure>
+          <div class="circle">&#9998;</div>
+          <figcaption>Drawing</figcaption>
+        </figure>
+        <figure>
+          <div class="circle">&#9835;</div>
+          <figcaption>Listening to music</figcaption>
+        </figure>
+        <figure>
+          <div class="circle">&#10084;</div>
+          <figcaption>Dancing &amp; performing</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Projects (original section kept) -->
+    <section id="projects" class="slide torn">
+      <h2>Featured Projects</h2>
+      <div class="card-row">
+        <div class="card">
+          <h3>Web Integration Lab</h3>
+          <p>A demonstration of linking HTML, CSS, and JS.</p>
+        </div>
+        <div class="card">
+          <h3>PokePhone &mdash; Phone Store System</h3>
+          <p>A Java command-line phone store management system with Admin, Manager, Staff, and Customer roles, using text files for storage.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Achievements (takes the "My family" slide's place) -->
+    <section id="achievements" class="slide">
+      <h2 class="ransom small" data-text="Achievements" aria-label="Achievements">Achievements</h2>
+      <ul class="chips">
+        <li>Sabayang Pagbigkas Champion</li>
+        <li>Speech Choir Champion</li>
+        <li>JHS Cheerdance Champion</li>
+        <li>SHS Cheerdance 1st Runner Up</li>
+        <li>Sportsdance Champion</li>
+        <li>Fitfest Champion</li>
+        <li>Interpretative Dance Champion</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 7: Photo wall -->
+    <section id="gallery" class="slide">
+      <h2 class="script big">My Gallery</h2>
+      <div class="clothesline">
+        <div class="polaroid tilt-left"><div class="photo-ph">Photo 1</div></div>
+        <div class="polaroid tilt-right"><div class="photo-ph">Photo 2</div></div>
+        <div class="polaroid tilt-left"><div class="photo-ph">Photo 3</div></div>
+        <div class="polaroid tilt-right"><div class="photo-ph">Photo 4</div></div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Contact / Thank you -->
+    <section id="contact" class="slide torn">
+      <h2 class="ransom small" data-text="Thank you!" aria-label="Thank you!">Thank you!</h2>
+      <p>Let's connect: <a href="mailto:fdamay_260000000973@uic.edu.ph">fdamay_260000000973@uic.edu.ph</a></p>
       <!-- Dynamic Target 2: Interactive Alert Button -->
       <button id="contact-btn">Get in Touch</button>
     </section>
+
   </main>
 
   <footer>
     <!-- Dynamic Target 3: Year Injection -->
-    <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> Francheska Louielyn T. Damay. All Rights Reserved.</p>
   </footer>
 
 </body>
