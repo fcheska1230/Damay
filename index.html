@@ -26,13 +26,16 @@
 
     <!-- Clickable buttons that jump to each section -->
     <div class="nav-inner">
-      <a class="logo" href="#home">&alt;Francheska/&gt;</a> 
+      <nav id="nav-menu" class="nav-menu" aria-label="Main">
+      <a class="logo" href="#home">Francheska</a>
       <a href="#about" data-link>About</a>
       <a href="#facts" data-link>Fun Facts</a>
       <a href="hobbies" data-link>Hobbies</a>
       <a href="#projects"data-link>Education</a>
       <a href="Achievements"data-link>Achievements</a>
       <a href="#contact"data-link>Contact</a>
+    </nav>
+      
     </div>
       
   </header>
@@ -40,7 +43,7 @@
   <main>
 
     <!-- SLIDE 1: Title -->
-    <section id="hero" class="slide torn">
+    <section id="hero" class="hero">
       <span class="sticker s1">&#9733;</span>
       <span class="sticker s2">&#10084;</span>
       <span class="sticker s3">&#9733;</span>
@@ -52,8 +55,8 @@
     </section>
 
     <!-- SLIDE 2: About me card -->
-    <section id="about" class="slide">
-      <div class="about-layout">
+    <section id="about" class="hero">
+      <div class="hero-text">
         <div class="polaroid tilt-left">
           <img src="Profile.jpg.jfif" alt="Francheska in toga">
           <p class="script caption">Francheska &hearts;</p>
@@ -68,8 +71,8 @@
     </section>
 
     <!-- SLIDE 3: Fun facts -->
-    <section id="facts" class="slide torn">
-      <div class="facts-layout">
+    <section id="facts" class="section facts">
+      <div class="reveal">
         <h2 class="script big">Fun Facts<br><small>About me</small></h2>
         <ul class="dotted">
           <li>I'm 18 years old.</li>
@@ -83,9 +86,9 @@
     </section>
 
     <!-- SLIDE 4: Hobbies -->
-    <section id="hobbies" class="slide">
+    <section id="hobbies" class="section hobbies">
       <h2 class="ransom small" data-text="My hobbies" aria-label="My hobbies">My hobbies</h2>
-      <div class="circles">
+      <div class="reveal">
         <figure>
           <div class="circle">&#9998;</div>
           <figcaption>Drawing</figcaption>
@@ -102,9 +105,9 @@
     </section>
 
     <!-- SLIDE 5: Projects (original section kept) -->
-    <section id="projects" class="slide torn">
+    <section id="projects" class="section projects">
       <h2>Education</h2>
-      <div class="card-row">
+      <div class="reveal">
         <div class="card">
           <h3>Education</h3>
           <p>Calinan Central ELementary School 2013-2020</p> 
@@ -118,8 +121,9 @@
       </div>
     </section>
 
-    <!-- SLIDE 6: Achievements (takes the "My family" slide's place) -->
+    <!-- SLIDE 6: Achievements -->
     <section id="achievements" class="slide">
+      <div class=reveal>
       <h2 class="ransom small" data-text="Achievements" aria-label="Achievements">Achievements</h2>
       <ul class="chips">
         <li>Sabayang Pagbigkas Champion</li>
@@ -129,6 +133,7 @@
         <li>Sportsdance Champion</li>
         <li>Fitfest Champion</li>
         <li>Interpretative Dance Champion</li>
+        </div>
       </ul>
     </section>
 
