@@ -24,133 +24,133 @@
       <button id="theme-btn">Toggle Dark Mode</button>
     </nav>
 
-    <!-- Clickable buttons that jump to each section -->
-    <div class="nav-inner">
-      <nav id="nav-menu" class="nav-menu" aria-label="Main">
-      <a class="logo" href="#home">Francheska</a>
-      <a href="#about" data-link>About</a>
-      <a href="#facts" data-link>Fun Facts</a>
-      <a href="hobbies" data-link>Hobbies</a>
-      <a href="#projects"data-link>Education</a>
-      <a href="Achievements"data-link>Achievements</a>
-      <a href="#contact"data-link>Contact</a>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student E-Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,800;1,700&family=Special+Elite&family=Bungee&display=swap">
+
+  <!-- Connection 1: External CSS Link -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Connection 2: External JavaScript Link -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <nav>
+      <h2>Francheska Louielyn T. Damay</h2>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Dynamic Target 1: Dark Mode Toggle -->
+      <button id="theme-btn" type="button">Toggle Dark Mode</button>
     </nav>
-      
-    </div>
-      
   </header>
 
   <main>
 
-    <!-- SLIDE 1: Title -->
-    <section id="hero" class="slide torn">
-      <span class="sticker s1">&#9733;</span>
-      <span class="sticker s2">&#10084;</span>
-      <span class="sticker s3">&#9733;</span>
-      <!-- Letters are cut out like a ransom note by script.js -->
-      <h1 class="ransom" data-text="Portfolio" aria-label="Portfolio">Portfolio</h1>
-      <p class="script">Welcome to My E-Portfolio</p>
-      <p class="hero-name">Francheska Louielyn T. Damay</p>
-      <p>1st Year Information Technology Student</p>
-    </section>
-
-    <!-- SLIDE 2: About me card -->
+    <!-- SLIDE 2: About me (note card + photo) -->
     <section id="about" class="slide">
-      <div class="hero-text">
-        <div class="polaroid tilt-left">
-          <img src="Profile.jpg.jfif" alt="Francheska in toga">
-          <p class="script caption">Francheska &hearts;</p>
-        </div>
-        <div class="paper">
-          <h2 class="script big">About me</h2>
-          <p>Hi! I'm <strong>Francheska Louielyn T. Damay</strong>, 18 years old, a first-year Information Technology student at the University of Immaculate Conception in Davao City.</p>
-          <p>I finished junior and senior high school at Calinan National High School (2020&ndash;2026) and elementary at Calinan Elementary School (2013&ndash;2020).</p>
-          <p>I love drawing, listening to music, and performing on stage &mdash; and now I'm learning to build things with code.</p>
-        </div>
+      <h2 class="ransom small" data-ransom>Hello!</h2>
+      <div class="about-wrap">
+        <figure class="polaroid">
+          <span class="tape" aria-hidden="true"></span>
+          <div class="photo" role="img" aria-label="Initials FD on a pink background"><span class="ph-text">FD</span></div>
+          <figcaption>Francheska ♡</figcaption>
+        </figure>
+        <article class="note">
+          <h3 class="script big">About me</h3>
+          <p>Hi! I'm <strong>Francheska</strong>, an 18-year-old from Davao City and a first-year Information Technology student at the <strong>University of Immaculate Conception</strong>.</p>
+          <p>I love drawing, listening to music, and performing on stage. Now I'm learning to turn that creativity into code, one page at a time.</p>
+          <p class="edu"><strong>Education:</strong> University of Immaculate Conception (current) · Calinan National High School (2020–2026) · Calinan Elementary School (2013–2020)</p>
+        </article>
       </div>
     </section>
 
     <!-- SLIDE 3: Fun facts -->
-    <section id="facts" class="slide torn">
-      <div class="reveal">
-        <h2 class="script big">Fun Facts<br><small>About me</small></h2>
-        <ul class="dotted">
-          <li>I'm 18 years old.</li>
-          <li>My favorite color is pink.</li>
-          <li>I like drawing in my free time.</li>
-          <li>I always have music playing.</li>
-          <li>I'm a multi-time dance and speech choir champion.</li>
-          <li>I'm studying Information Technology.</li>
-        </ul>
-      </div>
+    <section id="facts" class="slide">
+      <h2 class="ransom small" data-ransom>Fun facts</h2>
+      <ul class="facts">
+        <li>My favorite color is pink.</li>
+        <li>I love drawing in my free time.</li>
+        <li>I can't work without music on.</li>
+        <li>I've won titles in speech choir, cheerdance and dance sport.</li>
+        <li>I'm from Calinan, Davao City.</li>
+        <li>I'm building this site from scratch with HTML, CSS and JS.</li>
+      </ul>
     </section>
 
     <!-- SLIDE 4: Hobbies -->
     <section id="hobbies" class="slide">
-      <h2 class="ransom small" data-text="My hobbies" aria-label="My hobbies">My hobbies</h2>
-      <div class="reveal">
-        <figure>
-          <div class="circle">&#9998;</div>
-          <figcaption>Drawing</figcaption>
-        </figure>
-        <figure>
-          <div class="circle">&#9835;</div>
-          <figcaption>Listening to music</figcaption>
-        </figure>
-        <figure>
-          <div class="circle">&#10084;</div>
-          <figcaption>Dancing &amp; performing</figcaption>
-        </figure>
+      <h2 class="ransom small" data-ransom>My hobbies</h2>
+      <div class="circles">
+        <figure><div class="circle"><span>🎨</span></div><figcaption>Drawing</figcaption></figure>
+        <figure><div class="circle"><span>🎧</span></div><figcaption>Listening to music</figcaption></figure>
+        <figure><div class="circle"><span>💃</span></div><figcaption>Dance &amp; performing</figcaption></figure>
       </div>
     </section>
 
-    <!-- SLIDE 5: Projects (original section kept) -->
-    <section id="projects" class="slide torn">
-      <h2>Education</h2>
-      <div class="card-row">
-        <div class="card">
-          <h3>Education</h3>
-          <p>Calinan Central ELementary School 2013-2020</p> 
-          <p>Calinan National High School 2020-2026</p>
-          <p>University of the Immaculate Conception</p>
-        </div>
-        <div class="card">
-          <h3>PokePhone &mdash; Phone Store System</h3>
-          <p>A Java command-line phone store management system with Admin, Manager, Staff, and Customer roles, using text files for storage.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SLIDE 6: Achievements -->
+    <!-- SLIDE 5: Achievements -->
     <section id="achievements" class="slide">
-      <div class=reveal>
-      <h2 class="ransom small" data-text="Achievements" aria-label="Achievements">Achievements</h2>
-      <ul class="chips">
-        <li>Sabayang Pagbigkas Champion</li>
-        <li>Speech Choir Champion</li>
-        <li>JHS Cheerdance Champion</li>
-        <li>SHS Cheerdance 1st Runner Up</li>
-        <li>Sportsdance Champion</li>
-        <li>Fitfest Champion</li>
-        <li>Interpretative Dance Champion</li>
-        </div>
+      <h2 class="ransom small" data-ransom>Achievements</h2>
+      <ul class="ribbons">
+        <li>🏆 Sabayang Pagbigkas <b>Champion</b></li>
+        <li>🏆 Speech Choir <b>Champion</b></li>
+        <li>🏆 JHS Cheerdance <b>Champion</b></li>
+        <li>🥈 SHS Cheerdance <b>1st Runner Up</b></li>
+        <li>🏆 Sportsdance <b>Champion</b></li>
+        <li>🏆 Fitfest <b>Champion</b></li>
+        <li>🏆 Interpretative Dance <b>Champion</b></li>
       </ul>
     </section>
 
-    <!-- SLIDE 8: Contact / Thank you -->
-    <section id="contact" class="slide torn">
-      <h2 class="ransom small" data-text="Thank you!" aria-label="Thank you!">Thank you!</h2>
-      <p>Let's connect: <a href="mailto:fdamay_260000000973@uic.edu.ph">fdamay_260000000973@uic.edu.ph</a></p>
+    <!-- SLIDE 6: Projects (hanging on a photo line) -->
+    <section id="projects" class="slide">
+      <h2>Featured Projects</h2>
+      <div class="line">
+        <div class="card">
+          <h3>Web Integration Lab</h3>
+          <p>A demonstration of linking HTML, CSS, and JS.</p>
+        </div>
+        <div class="card">
+          <h3>TermiPhone</h3>
+          <p>A Java command-line Phone Store Management System with Admin, Manager, Staff and Customer roles and text-file storage.</p>
+        </div>
+        <div class="card">
+          <h3>This E-Portfolio</h3>
+          <p>A pink, scrapbook-style personal site with a theme toggle and dynamic content.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Contact / Thank you -->
+    <section id="contact" class="slide">
+      <span class="sticker s-star" aria-hidden="true">★</span>
+      <span class="sticker s-flower" aria-hidden="true">✿</span>
+      <h2 class="ransom" data-ransom>Thank you!</h2>
+      <p class="script">Let's connect</p>
       <!-- Dynamic Target 2: Interactive Alert Button -->
-      <button id="contact-btn">Get in Touch</button>
+      <button id="contact-btn" type="button">Get in Touch</button>
+      <div id="contact-info" class="contact-info" hidden>
+        <p>✉ <span id="email-text" class="email">fdamay_260000000973@uic.edu.ph</span></p>
+        <p>📍 Davao City, Philippines</p>
+        <button id="copy-btn" type="button">Copy email</button>
+      </div>
     </section>
 
   </main>
 
   <footer>
     <!-- Dynamic Target 3: Year Injection -->
-    <p>&copy; <span id="year"></span> Francheska Louielyn T. Damay. All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> All Rights Reserved.</p>
   </footer>
-
 </body>
 </html>
