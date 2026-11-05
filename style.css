@@ -57,7 +57,7 @@ header nav {
   padding-bottom: 1rem;
   border-bottom: 2px dashed var(--pink-6);
 }
-header nav h2 { font-family: 'Maple Mono', cursive; font-size: 2rem; }
+header nav h2 { font-family: 'Alfa Slab One', cursive; font-size: 2rem; }
 body.dark-mode header nav { border-bottom-color: var(--pink-3); }
 
 .nav-links { display: flex; gap: 1.2rem; list-style: none; flex-wrap: wrap; }
