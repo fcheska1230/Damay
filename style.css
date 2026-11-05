@@ -115,6 +115,8 @@ h3 { font-size: 1.2rem; }
 .eyebrow { font-family: 'Caveat', cursive; font-size: 1.8rem !important; margin-bottom: .5rem; }
 .script { font-family: 'Caveat', cursive; font-size: 2.2rem !important; font-weight: 700; margin: .6rem 0 .2rem; }
 .script.big { font-size: 2.6rem; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; margin: 0 0 .6rem; color: var(--pink-6); text-shadow: 1px 1px 0 #fff; }
+.photo { position: relative; aspect-ratio: 4/5; overflow: hidden; }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
 /* ===== Ransom-note lettering ===== */
 .ransom { font-size: clamp(2.6rem, 9vw, 5rem); line-height: 1.25; margin-bottom: .4rem; letter-spacing: 2px; }
